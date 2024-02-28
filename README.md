@@ -11,3 +11,7 @@ Concept personalization methods enable large text-to-image models to learn speci
 ## Pipeline
 
 ![](assets/pipeline.png)
+
+## Results
+
+![](assets/main_result2.png)
