@@ -1,6 +1,6 @@
 # U-VAP
 
-![](assets/teaser.png)
+![](assets/teaser.pdf)
 
 Will appear at CVPR 2024!
 
@@ -10,4 +10,4 @@ Concept personalization methods enable large text-to-image models to learn speci
 
 ## Pipeline
 
-![](assets/pipeline.png)
+![](assets/pipeline.pdf)
