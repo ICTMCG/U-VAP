@@ -2,6 +2,8 @@
 
 ![](assets/teaser.png)
 
+Paper: U-VAP: User-specified Visual Appearance Personalization via Decoupled Self Augmentation
+
 Will appear at CVPR 2024!
 
 ## Abstact
