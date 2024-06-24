@@ -5,11 +5,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from models import CLIPTextModel
 import torch
 
-import random
 import argparse
 
-from transformers.modeling_outputs import BaseModelOutputWithPooling
-from transformers.models.clip.modeling_clip import CLIPTextModelOutput
 from diffusers.loaders import TextualInversionLoaderMixin
 
 parser = argparse.ArgumentParser()
@@ -94,7 +91,9 @@ model_id = args.model_path
 SEED = args.seed
 torch.manual_seed(SEED)
 print(model_id)
+text_encoder = CLIPTextModel.from_pretrained(model_id, torch_dtype=torch.float16).to(device)
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16,safety_checker=None,
+                                                text_encoder=text_encoder,
                                                 requires_safety_checker=False,).to(device)
 
 image = get_pipe_image(pipe, prompt, placeholder_token, pos_token, neg_token, num_inference_steps=100, guidance_scale=7.5, height=768, width=768)

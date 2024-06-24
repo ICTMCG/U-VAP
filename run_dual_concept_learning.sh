@@ -5,6 +5,7 @@ export finetune_steps=$2  # 1000 is recommended
 FINAL_DIR="./outputs/<your final model path name>"
 dir="./augmented_data/<your augmented data path>"  # put target/non-target images together
 
+
 ############## Dual concept learning stage
 # if you decide to use accelerate, change the next row into this row
 # accelerate launch scripts/train_dreambooth_ag.py \  

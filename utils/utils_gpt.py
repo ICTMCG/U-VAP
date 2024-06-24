@@ -1,6 +1,4 @@
 import re
-import os
-import openai
 from openai import OpenAI
 
 # Attribute prior setting. You can manually change as you want.
