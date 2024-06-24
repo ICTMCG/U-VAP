@@ -21,13 +21,16 @@ Clone this project and install requirements to set up the environment (Python 3.
 conda env create -f environment.yaml
 conda activate UVAP
 cd U-VAP
+mkdir pretrained_models
+mkdir pre_outputs
+mkdir outputs
 ```
 Then download pre-trained models like [Stable Diffusion 1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5) under ```U-VAP/pretrained_models/```.
 The code for SDXL will be updated soon.
 
 ### Setup of GPT
 
-In our experiments, we utilize GPT-3.5-turbo to generate augmented descriptions. You should have an OpenAI-API key for freely using GPT and write your key in the file ```U-VAP/utils/utils_gpt.py```.
+In our experiments, we utilize GPT-3.5-turbo to generate augmented descriptions. You should have an OpenAI-API key for freely using GPT and write your key in the file ```U-VAP/utils/utils_gpt.py```. You can adjust the prompt for GPT in there to get better generated answers.
 
 ## Running
 
