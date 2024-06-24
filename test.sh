@@ -8,7 +8,7 @@ pos_token="pos"
 neg_token="neg"
 prompt="a photo of shirt in sks color"
 
-CUDA_VISIBLE_DEVICES=$DEVICE python scripts/test_db_new_version.py \
+CUDA_VISIBLE_DEVICES=$DEVICE python scripts/inference.py \
     --prompt "${prompt}" \
     --placeholder_token "sks"\
     --pos_token "${pos_token}"\
