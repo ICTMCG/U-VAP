@@ -657,13 +657,11 @@ class DreamBoothDataset(Dataset):
     def __getitem__(self, index):
         example = {}
         instance_image = Image.open(self.instance_images_path[index % self.num_instance_images])
-        #################
+        # prompt process
         if "{" in self.instance_prompt:
             template_part = self.instance_images_path[index % self.num_instance_images].name.split('.')[0]
             self.variable_prompt = self.instance_prompt.format(template_part.split('__')[0].split('_')[-1])
             self.variable_prompt = self.variable_prompt.replace('-', ' ')
-            # print("prompt", self.variable_prompt)
-        #################
         instance_image = exif_transpose(instance_image)
 
         if not instance_image.mode == "RGB":

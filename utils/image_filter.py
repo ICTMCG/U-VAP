@@ -5,12 +5,7 @@ from PIL import Image
 import torch
 import shutil
 import re
-
-import torch
-import os
-import numpy as np
 from torchvision.transforms import ToPILImage
-from PIL import Image
 import open_clip
 
 to_pil = ToPILImage()

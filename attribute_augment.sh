@@ -48,4 +48,3 @@ CUDA_VISIBLE_DEVICES=$DEVICE python utils/image_filter.py \
     --attri_n "${attri_n}" \
     --n_k  20 \
 # After this step, we manually conducted further curation
-
