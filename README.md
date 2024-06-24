@@ -73,3 +73,19 @@ Directly run ```bash test.sh {device} {adjustment weight} {seed}``` after changi
 ## Results
 
 ![](assets/main_result2.png)
+
+## Citation
+
+```BibTeX
+@inproceedings{wu2024u,
+  title={U-VAP: User-specified Visual Appearance Personalization via Decoupled Self Augmentation},
+  author={Wu, You and Liu, Kean and Mi, Xiaoyue and Tang, Fan and Cao, Juan and Li, Jintao},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={9482--9491},
+  year={2024}
+}
+```
+
+## Acknowledgements
+
+The training code is mainly based on [diffusers](https://github.com/huggingface/diffusers).
