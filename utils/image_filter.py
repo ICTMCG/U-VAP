@@ -38,50 +38,6 @@ def get_img_similarity(oir_image, generated_image):
 
     return (gen_feat @ ori_gen_feat.t()).mean().item()
 
-def get_direction_similarity(source_prompt, target_prompt, source_image, target_image, direction_loss):
-    with torch.no_grad():
-        source_text = tokenizer([source_prompt]).to(device)
-        source_text_feat = clip_model.encode_text(source_text)
-        target_text = tokenizer([target_prompt]).to(device)
-        target_text_feat = clip_model.encode_text(target_text)
-        text_direction = (target_text_feat - source_text_feat).mean(axis=0, keepdim=True)
-        text_direction /= text_direction.norm(dim=-1, keepdim=True)
-
-        source_batch = [clip_preprocess(i).unsqueeze(0) for i in [source_image]]
-        source_batch = torch.concatenate(source_batch).to(device)
-        target_batch = [clip_preprocess(i).unsqueeze(0) for i in [target_image]]
-        target_batch = torch.concatenate(target_batch).to(device)
-        source_img_feat = clip_model.encode_image(source_batch)
-        target_img_feat = clip_model.encode_image(target_batch)
-        img_direction = (target_img_feat - source_img_feat)
-        
-        if img_direction.sum() == 0:
-            target_img_feat = clip_model.encode_image(target_batch + 1e-6)
-            img_direction = (target_img_feat - source_img_feat)
-        img_direction /= (img_direction.clone().norm(dim=-1, keepdim=True))
-    
-    return 1 - direction_loss(text_direction, img_direction).mean().item()
-
-class DirectionLoss(torch.nn.Module):
-
-    def __init__(self, loss_type='mse'):
-        super(DirectionLoss, self).__init__()
-
-        self.loss_type = loss_type
-
-        self.loss_func = {
-            'mse':    torch.nn.MSELoss,
-            'cosine': torch.nn.CosineSimilarity,
-            'mae':    torch.nn.L1Loss
-        }[loss_type]()
-
-    def forward(self, x, y):
-        if self.loss_type == "cosine":
-            return 1. - self.loss_func(x, y)
-        
-        return self.loss_func(x, y)
-
-direction_loss = DirectionLoss(loss_type="cosine")
 
 def get_k_img(img_list, score_list, n_k):
     highest_scores = sorted(zip(img_list, score_list), key=lambda x: x[1], reverse=True)[:n_k]
