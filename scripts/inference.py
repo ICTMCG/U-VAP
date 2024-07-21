@@ -91,7 +91,7 @@ model_id = args.model_path
 SEED = args.seed
 torch.manual_seed(SEED)
 print(model_id)
-text_encoder = CLIPTextModel.from_pretrained(model_id, torch_dtype=torch.float16).to(device)
+text_encoder = CLIPTextModel.from_pretrained(f'{model_id}/text_encoder', torch_dtype=torch.float16).to(device)
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16,safety_checker=None,
                                                 text_encoder=text_encoder,
                                                 requires_safety_checker=False,).to(device)
