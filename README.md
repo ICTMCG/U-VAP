@@ -2,7 +2,7 @@
 
 ![](assets/teaser.png)
 
-Paper: "U-VAP: User-specified Visual Appearance Personalization via Decoupled Self Augmentation" [[arxiv](https://arxiv.org/abs/2403.20231)] 
+Paper: "U-VAP: User-specified Visual Appearance Personalization via Decoupled Self Augmentation" [[Link](https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_U-VAP_User-specified_Visual_Appearance_Personalization_via_Decoupled_Self_Augmentation_CVPR_2024_paper.pdf)] 
 
 Will appear at CVPR 2024!
 
