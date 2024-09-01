@@ -1,11 +1,11 @@
 # PUA3
 
-Paper: "PUA^3: <u>P</u>ersonalizing <ins>U</ins>ser-specified <ins>A</ins>ppearance via Decoupled <ins>A</ins>ugmentation and <ins>A</ins>djustment" 
+Paper: "PUA<sup>3: <u>P</u>ersonalizing <ins>U</ins>ser-specified <ins>A</ins>ppearance via Decoupled <ins>A</ins>ugmentation and <ins>A</ins>djustment" 
 
 ## Abstact
 
 Recent advancements in concept personalization have enabled users to generate their custom visual content using large-scale text-to-image models. Existing works can generate the whole subject with a few reference images while struggling to precisely disentangle specific visual appearances from a subject. The main challenges lie in the significant bias of image references towards visual attributes and the lack of attribute-aware supervision or guidance.
-In this paper, we design a user-specified visual appearance personalization approach named PUA^3^, allowing users to specify the desired attributes with text descriptions. We propose a novel learning strategy named decoupled self-augmentation for guiding the personalization of user-specified visual attributes. With synthetic target-related and non-target samples, the model refines its understanding of the target attributes while mitigating the impact of undesired attributes. During the inference stage, PUA^3^ conducts semantic adjustments in the latent space, where the noises predicted by a base prompt with novel concepts and learned semantics of target and non-target attributes are modified with more appropriate guidance. Extensive results demonstrate better controllability and flexibility of the proposed method over other state-of-the-art personalization methods to mimic various kinds of visual attributes in novel contexts.
+In this paper, we design a user-specified visual appearance personalization approach named PUA<sup>3, allowing users to specify the desired attributes with text descriptions. We propose a novel learning strategy named decoupled self-augmentation for guiding the personalization of user-specified visual attributes. With synthetic target-related and non-target samples, the model refines its understanding of the target attributes while mitigating the impact of undesired attributes. During the inference stage, PUA<sup>3 conducts semantic adjustments in the latent space, where the noises predicted by a base prompt with novel concepts and learned semantics of target and non-target attributes are modified with more appropriate guidance. Extensive results demonstrate better controllability and flexibility of the proposed method over other state-of-the-art personalization methods to mimic various kinds of visual attributes in novel contexts.
 
 ## Pipeline
 
