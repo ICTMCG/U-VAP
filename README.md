@@ -1,9 +1,6 @@
-# U-VAP
+# PUA3
 
-Paper: "PUA^3: <u>P</u>ersonalizing <u>U</u>ser-specified <u>A</u>ppearance via Decoupled <u>A</u>ugmentation and <u>A</u>djustment" 
-<!-- [[arxiv](https://arxiv.org/abs/2403.20231)]  -->
-
-<!-- Will appear at CVPR 2024! -->
+Paper: "PUA^3: <u>P</u>ersonalizing <ins>U</ins>ser-specified <ins>A</ins>ppearance via Decoupled <ins>A</ins>ugmentation and <ins>A</ins>djustment" 
 
 ## Abstact
 
