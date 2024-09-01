@@ -27,6 +27,7 @@ CUDA_VISIBLE_DEVICES=$DEVICE python scripts/train_dreambooth.py \
     --max_train_steps=$pre_train_steps \
     --num_class_images=50 \
 
+
 ############## self augmentation
 # Generating descriptions by GPT
 init_prompt="a photo of sks object in cnc color"  # initial prompt
@@ -38,13 +39,15 @@ CUDA_VISIBLE_DEVICES=$DEVICE python utils/run_augmentation.py \
     --attri_p "${attri_p}" \
     --attri_n "${attri_n}" \
     --n_p 50 \
+    --delete 1 \
     --get_description "${get_description}" \
 
-# Data curation
-CUDA_VISIBLE_DEVICES=$DEVICE python utils/image_filter.py \
+
+CUDA_VISIBLE_DEVICES=$DEVICE python utils/image_filter_v2.py \
+    --model_path "${MODEL_NAME}" \
+    --init_prompt  "${init_prompt}" \
     --ori_path "${dir}" \
     --image_path  "${OUTPUT_DIR}/output" \
     --attri_p "${attri_p}" \
     --attri_n "${attri_n}" \
-    --n_k  20 \
-# After this step, we manually conducted further curation
+    --n_k  30 \

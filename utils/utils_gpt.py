@@ -1,11 +1,15 @@
 import re
+import os
+import openai
 from openai import OpenAI
 
 # Attribute prior setting. You can manually change as you want.
 template = {"color": "\"red\", \"green\"", "object": "\"dog\"\, \"plane\""}
 
 client = OpenAI(
-    api_key="sk-...",  # your openai API
+    # This is the default and can be omitted
+    api_key="sk-1BQifCCuqckepzdocJCCXJQvfvkAJ9aRUBAkL3h7wiJ7Tcmr",
+    base_url="https://api.chatanywhere.tech/v1",
 )
 
 def chat_with_gpt(init_prompt, attri, n_p):
@@ -14,9 +18,9 @@ def chat_with_gpt(init_prompt, attri, n_p):
 
     sys_text = "Hi chatgpt, you are a imaginative sentence rewriter. Given an sentence and a special attribute word in it, you will change the word by another new counterfactual attribute word. This new word should be different form special attribute word apparently. "
     if attri not in template:
-        text = f"There is a sentence: \"{init_prompt}\". Please change the \"{pseudo}\" before the \"{attri}\" with {n_p} different words to describe different \"{attri}\", and output {n_p} new sentences. Each new word must be different!"
+        text = f"There is a sentence: \"{init_prompt}\". Please change the \"{pseudo[0]}\" before the \"{attri}\" with {n_p} different words to describe different \"{attri}\", and output {n_p} new sentences. Each new word must be different!"
     else:
-        text = f"There is a sentence: \"{init_prompt}\". Please change the \"{pseudo}\" before the \"{attri}\" with {n_p} different words to describe different \"{attri}\" (such as {template[attri]}.), and output {n_p} new sentences. Each new word must be different!"
+        text = f"There is a sentence: \"{init_prompt}\". Please change the \"{pseudo[0]}\" before the \"{attri}\" with {n_p} different words to describe different \"{attri}\" (such as {template[attri]}.), and output {n_p} new sentences. Each new word must be different!"
 
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",

@@ -13,6 +13,7 @@ a photo of hat object in sks color
 a photo of bird object in sks color
 a photo of house object in sks color
 a photo of ball object in sks color
+a photo of blanket object in sks color
 a photo of watch object in sks color
 a photo of chair object in sks color
 a photo of table object in sks color
@@ -26,8 +27,10 @@ a photo of camera object in sks color
 a photo of painting object in sks color
 a photo of purse object in sks color
 a photo of shirt object in sks color
+a photo of ring object in sks color
 a photo of umbrella object in sks color
 a photo of balloon object in sks color
+a photo of basket object in sks color
 a photo of hat object in sks color
 a photo of cookie object in sks color
 a photo of sunglasses object in sks color
