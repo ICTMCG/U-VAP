@@ -1,12 +1,14 @@
 # U-VAP
 
-Paper: "U-VAP: User-specified Visual Appearance Personalization via Decoupled Self Augmentation" [[arxiv](https://arxiv.org/abs/2403.20231)] 
+Paper: "PUA^3: <u>P</u>ersonalizing <u>U</u>ser-specified <u>A</u>ppearance via Decoupled <u>A</u>ugmentation and <u>A</u>djustment" 
+<!-- [[arxiv](https://arxiv.org/abs/2403.20231)]  -->
 
-Will appear at CVPR 2024!
+<!-- Will appear at CVPR 2024! -->
 
 ## Abstact
 
-Concept personalization methods enable large text-to-image models to learn specific subjects (e.g., objects/poses/3D models) and synthesize renditions in new contexts. Given that the image references are highly biased towards visual attributes, state-of-the-art personalization models tend to overfit the whole subject and cannot disentangle visual characteristics in pixel space. In this study, we proposed a more challenging setting, namely fine-grained visual appearance personalization. Different from existing methods, we allow users to provide a sentence describing the desired attributes. A novel decoupled self-augmentation strategy is proposed to generate target-related and non-target samples to learn user-specified visual attributes. These augmented data allow for refining the model's understanding of the target attribute while mitigating the impact of unrelated attributes. At the inference stage, adjustments are conducted on semantic space through the learned target and non-target embeddings to further enhance the disentanglement of target attributes. Extensive experiments on various kinds of visual attributes with SOTA personalization methods show the ability of the proposed method to mimic target visual appearance in novel contexts, thus improving the controllability and flexibility of personalization.
+Recent advancements in concept personalization have enabled users to generate their custom visual content using large-scale text-to-image models. Existing works can generate the whole subject with a few reference images while struggling to precisely disentangle specific visual appearances from a subject. The main challenges lie in the significant bias of image references towards visual attributes and the lack of attribute-aware supervision or guidance.
+In this paper, we design a user-specified visual appearance personalization approach named PUA^3, allowing users to specify the desired attributes with text descriptions. We propose a novel learning strategy named decoupled self-augmentation for guiding the personalization of user-specified visual attributes. With synthetic target-related and non-target samples, the model refines its understanding of the target attributes while mitigating the impact of undesired attributes. During the inference stage, PUA^3 conducts semantic adjustments in the latent space, where the noises predicted by a base prompt with novel concepts and learned semantics of target and non-target attributes are modified with more appropriate guidance. Extensive results demonstrate better controllability and flexibility of the proposed method over other state-of-the-art personalization methods to mimic various kinds of visual attributes in novel contexts.
 
 ## Pipeline
 
@@ -24,6 +26,7 @@ mkdir pre_outputs
 mkdir outputs
 ```
 Then download pre-trained models like [Stable Diffusion 1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5) under ```U-VAP/pretrained_models/```.
+The code for Textual Inversion has been updated.
 The code for SDXL will be updated soon.
 
 ### Setup of GPT
@@ -69,13 +72,17 @@ bash run_dual_concept_learning.sh 3 1000  # 1000 training steps
 ```
 
 ### Inference
-Directly run ```bash test.sh {device} {adjustment weight} {seed}``` after changing the prompt in this file.
+Directly run ```bash test.sh {device} {adjustment weight} {guidance scale w_a} {guidance scale w} {seed}``` after changing the prompt in this file.
 
 ## Results
 
 ![](assets/main_result.png)
 
-## Citation
+## Comparison to Earlier Publication
+
+![](assets/uvap_ablation.png)
+
+<!-- ## Citation
 
 ```BibTeX
 @inproceedings{wu2024u,
@@ -85,7 +92,7 @@ Directly run ```bash test.sh {device} {adjustment weight} {seed}``` after changi
   pages={9482--9491},
   year={2024}
 }
-```
+``` -->
 
 ## Acknowledgements
 
