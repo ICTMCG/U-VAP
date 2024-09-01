@@ -1,7 +1,5 @@
 # U-VAP
 
-![](assets/teaser.png)
-
 Paper: "U-VAP: User-specified Visual Appearance Personalization via Decoupled Self Augmentation" [[arxiv](https://arxiv.org/abs/2403.20231)] 
 
 Will appear at CVPR 2024!
@@ -12,7 +10,7 @@ Concept personalization methods enable large text-to-image models to learn speci
 
 ## Pipeline
 
-![](assets/pipeline.png)
+![](assets/pipeline_v2.png)
 
 ## Setup
 
@@ -75,7 +73,7 @@ Directly run ```bash test.sh {device} {adjustment weight} {seed}``` after changi
 
 ## Results
 
-![](assets/main_result2.png)
+![](assets/main_result.png)
 
 ## Citation
 
