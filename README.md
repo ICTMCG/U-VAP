@@ -1,4 +1,4 @@
-# PUA3
+# PUA<sup>3</sup>
 
 Paper: "PUA<sup>3</sup>: <u>P</u>ersonalizing <ins>U</ins>ser-specified <ins>A</ins>ppearance via Decoupled <ins>A</ins>ugmentation and <ins>A</ins>djustment" 
 
